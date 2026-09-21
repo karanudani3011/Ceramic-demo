@@ -8,7 +8,6 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
 
   if (!isOpen) return null;
 
-  // Search across items
   const cleanQuery = query.toLowerCase().trim();
 
   const matchingCategories = CATEGORIES.filter(c => 
@@ -39,7 +38,7 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/80 backdrop-blur-md"
+        className="fixed inset-0 bg-[#34322E]/65 backdrop-blur-md"
         onClick={onClose}
       />
 
@@ -49,30 +48,30 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: -20 }}
         transition={{ duration: 0.25 }}
-        className="relative w-full max-w-2xl bg-[#1B1C20] text-white border border-white/20 rounded-sm shadow-2xl overflow-hidden z-10 flex flex-col max-h-[80vh]"
+        className="relative w-full max-w-2xl bg-[#FFFDF9] text-[#34322E] border border-[#EDE5D8] rounded-sm shadow-2xl overflow-hidden z-10 flex flex-col max-h-[80vh]"
       >
         {/* Search Input Field */}
-        <div className="p-4 sm:p-5 border-b border-white/10 flex items-center gap-3 bg-[#121316]">
-          <Search className="w-5 h-5 text-[#C27D56] shrink-0" />
+        <div className="p-4 sm:p-5 border-b border-[#EDE5D8] flex items-center gap-3 bg-[#F8F5EF]">
+          <Search className="w-5 h-5 text-[#B86F52] shrink-0" />
           <input
             type="text"
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search Calacatta, 20mm pavers, wood plank, bathroom slabs, finishes..."
-            className="w-full bg-transparent text-sm sm:text-base text-white focus:outline-none placeholder:text-gray-500 font-light"
+            className="w-full bg-transparent text-sm sm:text-base text-[#34322E] focus:outline-none placeholder:text-[#777168]/60 font-light"
           />
           {query && (
             <button
               onClick={() => setQuery('')}
-              className="p-1 text-gray-400 hover:text-white"
+              className="p-1 text-[#777168] hover:text-[#34322E]"
             >
               <X className="w-4 h-4" />
             </button>
           )}
           <button
             onClick={onClose}
-            className="px-2.5 py-1 text-xs uppercase tracking-wider text-gray-400 hover:text-white border border-white/10 rounded-sm"
+            className="px-2.5 py-1 text-xs uppercase tracking-wider text-[#777168] hover:text-[#34322E] border border-[#EDE5D8] rounded-sm hover:border-[#D9CEBC]"
           >
             ESC
           </button>
@@ -81,7 +80,7 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
         {/* Quick Suggested Tags if query is empty */}
         {!cleanQuery && (
           <div className="p-6 space-y-4">
-            <span className="text-xs uppercase tracking-widest text-[#A8A297] font-semibold block">
+            <span className="text-xs uppercase tracking-widest text-[#777168] font-semibold block">
               Popular Architectural Queries
             </span>
             <div className="flex flex-wrap gap-2">
@@ -89,7 +88,7 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
                 <button
                   key={idx}
                   onClick={() => setQuery(tag)}
-                  className="px-3 py-1.5 bg-white/5 hover:bg-white/15 text-xs text-[#D9D0C3] hover:text-white rounded-sm border border-white/10 transition-colors"
+                  className="px-3 py-1.5 bg-[#EDE5D8] hover:bg-[#D9CEBC] text-xs text-[#34322E] hover:text-[#B86F52] rounded-sm border border-[#D9CEBC] hover:border-[#B86F52]/40 transition-colors"
                 >
                   {tag}
                 </button>
@@ -101,14 +100,14 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
         {/* Search Results List */}
         {cleanQuery && (
           <div className="p-4 sm:p-6 overflow-y-auto space-y-6">
-            <div className="text-xs text-[#A8A297] uppercase tracking-wider">
+            <div className="text-xs text-[#777168] uppercase tracking-wider">
               Found {totalResults} matching results
             </div>
 
             {/* Collections Results */}
             {matchingCollections.length > 0 && (
               <div className="space-y-3">
-                <span className="text-[11px] font-semibold uppercase tracking-widest text-[#C27D56]">
+                <span className="text-[11px] font-semibold uppercase tracking-widest text-[#B86F52]">
                   Signature Collections
                 </span>
                 <div className="space-y-2">
@@ -119,20 +118,20 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
                         onClose();
                         onOpenQuoteModal(col.name);
                       }}
-                      className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-sm flex items-center justify-between cursor-pointer transition-colors group"
+                      className="p-3 bg-[#F8F5EF] hover:bg-[#EDE5D8] border border-[#EDE5D8] hover:border-[#B86F52]/40 rounded-sm flex items-center justify-between cursor-pointer transition-colors group"
                     >
                       <div className="flex items-center gap-3">
-                        <img src={col.image} alt={col.name} className="w-12 h-12 object-cover rounded-sm" />
+                        <img src={col.image} alt={col.name} className="w-12 h-12 object-cover rounded-sm border border-[#EDE5D8]" />
                         <div>
-                          <div className="text-sm font-semibold text-white group-hover:text-[#DFBD69]">
+                          <div className="text-sm font-semibold text-[#34322E] group-hover:text-[#B86F52] transition-colors">
                             {col.name}
                           </div>
-                          <div className="text-xs text-gray-400">
+                          <div className="text-xs text-[#777168]">
                             {col.finish} • {col.origin}
                           </div>
                         </div>
                       </div>
-                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 text-[#777168] group-hover:text-[#B86F52] group-hover:translate-x-1 transition-all" />
                     </div>
                   ))}
                 </div>
@@ -142,7 +141,7 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
             {/* Categories Results */}
             {matchingCategories.length > 0 && (
               <div className="space-y-3">
-                <span className="text-[11px] font-semibold uppercase tracking-widest text-[#C27D56]">
+                <span className="text-[11px] font-semibold uppercase tracking-widest text-[#B86F52]">
                   Product Categories
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -154,12 +153,12 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
                         const elem = document.querySelector('#categories');
                         if (elem) elem.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-sm flex items-center gap-3 cursor-pointer transition-colors"
+                      className="p-3 bg-[#F8F5EF] hover:bg-[#EDE5D8] border border-[#EDE5D8] hover:border-[#B86F52]/40 rounded-sm flex items-center gap-3 cursor-pointer transition-colors"
                     >
-                      <img src={cat.image} alt={cat.title} className="w-10 h-10 object-cover rounded-sm" />
+                      <img src={cat.image} alt={cat.title} className="w-10 h-10 object-cover rounded-sm border border-[#EDE5D8]" />
                       <div>
-                        <div className="text-xs font-semibold text-white">{cat.title}</div>
-                        <div className="text-[10px] text-gray-400">{cat.itemCount}</div>
+                        <div className="text-xs font-semibold text-[#34322E]">{cat.title}</div>
+                        <div className="text-[10px] text-[#777168]">{cat.itemCount}</div>
                       </div>
                     </div>
                   ))}
@@ -170,7 +169,7 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
             {/* Projects Results */}
             {matchingProjects.length > 0 && (
               <div className="space-y-3">
-                <span className="text-[11px] font-semibold uppercase tracking-widest text-[#C27D56]">
+                <span className="text-[11px] font-semibold uppercase tracking-widest text-[#B86F52]">
                   Inspiration Projects
                 </span>
                 <div className="space-y-2">
@@ -182,17 +181,17 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
                         const elem = document.querySelector('#inspiration');
                         if (elem) elem.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-sm flex items-center justify-between cursor-pointer transition-colors group"
+                      className="p-3 bg-[#F8F5EF] hover:bg-[#EDE5D8] border border-[#EDE5D8] hover:border-[#B86F52]/40 rounded-sm flex items-center justify-between cursor-pointer transition-colors group"
                     >
                       <div>
-                        <div className="text-xs font-semibold text-white group-hover:text-[#DFBD69]">
+                        <div className="text-xs font-semibold text-[#34322E] group-hover:text-[#B86F52] transition-colors">
                           {proj.title}
                         </div>
-                        <div className="text-[10px] text-gray-400">
+                        <div className="text-[10px] text-[#777168]">
                           {proj.category} • {proj.location}
                         </div>
                       </div>
-                      <ArrowRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-white" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#777168] group-hover:text-[#B86F52] transition-colors" />
                     </div>
                   ))}
                 </div>
@@ -200,7 +199,7 @@ export default function SearchModal({ isOpen, onClose, onOpenQuoteModal }) {
             )}
 
             {totalResults === 0 && (
-              <div className="text-center py-8 text-sm text-gray-400">
+              <div className="text-center py-8 text-sm text-[#777168]">
                 No exact surfaces matched "{query}". Try searching for "Marble", "Pavers", "Slab", or "Oak".
               </div>
             )}

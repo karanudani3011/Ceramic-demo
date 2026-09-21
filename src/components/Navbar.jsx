@@ -22,7 +22,6 @@ export default function Navbar({ onOpenQuoteModal, onOpenSearchModal, onOpenBook
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Sleek, clean luxury navigation matching the business requirements
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'Collections', href: '#collections', id: 'collections' },
@@ -45,23 +44,23 @@ export default function Navbar({ onOpenQuoteModal, onOpenSearchModal, onOpenBook
 
   return (
     <>
-      {/* Top Thin Luxury Bar */}
-      <div className="bg-[#101114] text-[#C5BEB3] text-[11px] py-1.5 px-4 sm:px-8 border-b border-white/5 tracking-[0.15em] uppercase transition-all duration-300">
+      {/* Top Thin Warm Bar */}
+      <div className="bg-[#EDE5D8] text-[#777168] text-[11px] py-1.5 px-4 sm:px-8 border-b border-[#D9CEBC] tracking-[0.15em] uppercase transition-all duration-300">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C27D56] animate-pulse"></span>
-            <span className="font-light truncate">Italian Porcelain & Ceramic Architectural Surfaces • 2026 Reserve</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#B86F52] animate-pulse"></span>
+            <span className="font-light truncate">Italian Porcelain &amp; Ceramic Architectural Surfaces • 2026 Reserve</span>
           </div>
-          <div className="hidden md:flex items-center gap-6 text-[11px] text-[#A8A297]">
+          <div className="hidden md:flex items-center gap-6 text-[11px] text-[#777168]">
             <button 
               onClick={onOpenBookingModal}
-              className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 hover:text-[#34322E] transition-colors cursor-pointer"
             >
-              <Compass className="w-3 h-3 text-[#C27D56]" />
+              <Compass className="w-3 h-3 text-[#B86F52]" />
               <span>Book VIP Showroom Tour</span>
             </button>
             <span className="opacity-30">|</span>
-            <a href={`tel:${BRAND_INFO.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-white transition-colors">
+            <a href={`tel:${BRAND_INFO.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-[#34322E] transition-colors">
               {BRAND_INFO.phone}
             </a>
           </div>
@@ -72,8 +71,8 @@ export default function Navbar({ onOpenQuoteModal, onOpenSearchModal, onOpenBook
       <header 
         className={`sticky top-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-[#121316]/95 backdrop-blur-md text-[#FBF9F5] shadow-xl py-3 border-b border-white/10' 
-            : 'bg-[#FBF9F5]/95 backdrop-blur-md text-[#1B1C20] py-4 border-b border-[#1B1C20]/10'
+            ? 'bg-[#F8F5EF]/95 backdrop-blur-md text-[#34322E] shadow-md py-3 border-b border-[#D9CEBC]' 
+            : 'bg-[#F8F5EF]/95 backdrop-blur-md text-[#34322E] py-4 border-b border-[#D9CEBC]'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -84,29 +83,23 @@ export default function Navbar({ onOpenQuoteModal, onOpenSearchModal, onOpenBook
             className="flex items-center gap-3 shrink-0 group focus:outline-none"
             onClick={(e) => { e.preventDefault(); handleNavClick('home', '#home'); }}
           >
-            <div className={`w-9 h-9 rounded-sm flex items-center justify-center transition-all duration-300 border ${
-              isScrolled 
-                ? 'bg-[#1E2025] border-[#C27D56]/40 text-[#DFBD69]' 
-                : 'bg-[#1B1C20] border-[#1B1C20] text-[#EBE5DC]'
-            } group-hover:border-[#C27D56]`}>
+            <div className="w-9 h-9 rounded-sm flex items-center justify-center transition-all duration-300 border bg-[#34322E] border-[#34322E] text-[#FFFDF9] group-hover:border-[#B86F52] group-hover:bg-[#B86F52]">
               <span className="font-display-luxury text-lg font-bold tracking-tight">
                 A
               </span>
             </div>
 
             <div className="flex flex-col">
-              <span className={`font-display-luxury text-lg sm:text-xl font-bold tracking-[0.22em] leading-none transition-colors ${
-                isScrolled ? 'text-white' : 'text-[#121316]'
-              }`}>
+              <span className="font-display-luxury text-lg sm:text-xl font-bold tracking-[0.22em] leading-none text-[#34322E] transition-colors">
                 {BRAND_INFO.name}
               </span>
-              <span className="text-[8px] sm:text-[9px] tracking-[0.28em] font-medium text-[#C27D56] uppercase mt-0.5">
+              <span className="text-[8px] sm:text-[9px] tracking-[0.28em] font-medium text-[#B86F52] uppercase mt-0.5">
                 {BRAND_INFO.tagline}
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation Links - Single Clean Row */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-1.5">
             {navLinks.map((link) => {
               const isActive = activeNav === link.id;
@@ -119,21 +112,17 @@ export default function Navbar({ onOpenQuoteModal, onOpenSearchModal, onOpenBook
                     handleNavClick(link.id, link.href);
                   }}
                   className={`relative px-3 py-1.5 text-xs tracking-[0.14em] uppercase font-medium whitespace-nowrap transition-all duration-200 rounded-sm flex items-center gap-1.5 ${
-                    isScrolled
-                      ? isActive
-                        ? 'text-[#DFBD69] font-semibold'
-                        : 'text-[#D9D0C3] hover:text-white'
-                      : isActive
-                        ? 'text-[#A85A32] font-semibold'
-                        : 'text-[#4E515D] hover:text-[#1B1C20]'
+                    isActive
+                      ? 'text-[#B86F52] font-semibold'
+                      : 'text-[#777168] hover:text-[#34322E]'
                   }`}
                 >
                   <span>{link.name}</span>
                   {link.isSpecial && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C27D56] animate-pulse"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#B86F52] animate-pulse"></span>
                   )}
                   {isActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-[1.5px] bg-[#C27D56]" />
+                    <span className="absolute bottom-0 left-3 right-3 h-[1.5px] bg-[#B86F52] rounded-full" />
                   )}
                 </a>
               );
@@ -146,23 +135,15 @@ export default function Navbar({ onOpenQuoteModal, onOpenSearchModal, onOpenBook
             <button
               onClick={onOpenSearchModal}
               aria-label="Search Collection"
-              className={`p-2 rounded-full transition-all duration-200 ${
-                isScrolled
-                  ? 'bg-white/5 hover:bg-white/15 text-[#D9D0C3] hover:text-white'
-                  : 'bg-black/5 hover:bg-black/10 text-[#2A2C33]'
-              }`}
+              className="p-2 rounded-full transition-all duration-200 bg-[#EDE5D8]/70 hover:bg-[#EDE5D8] text-[#34322E] hover:text-[#B86F52]"
             >
               <Search className="w-4 h-4" />
             </button>
 
-            {/* Get Quote Luxury Button */}
+            {/* Get Quote Button */}
             <button
               onClick={onOpenQuoteModal}
-              className={`relative overflow-hidden px-4 sm:px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase rounded-sm transition-all duration-200 flex items-center gap-1.5 shadow-sm hover:scale-[1.02] ${
-                isScrolled
-                  ? 'bg-[#C27D56] hover:bg-[#A85A32] text-white'
-                  : 'bg-[#1B1C20] hover:bg-[#C27D56] text-white'
-              }`}
+              className="relative overflow-hidden px-4 sm:px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase rounded-sm transition-all duration-200 flex items-center gap-1.5 shadow-sm hover:scale-[1.02] bg-[#B86F52] hover:bg-[#A55E42] text-[#FFFDF9]"
             >
               <span className="whitespace-nowrap">Get Quote</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -171,9 +152,7 @@ export default function Navbar({ onOpenQuoteModal, onOpenSearchModal, onOpenBook
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden p-2 rounded-sm transition-colors ${
-                isScrolled ? 'text-white hover:bg-white/10' : 'text-[#1B1C20] hover:bg-black/5'
-              }`}
+              className="lg:hidden p-2 rounded-sm transition-colors text-[#34322E] hover:bg-[#EDE5D8] hover:text-[#B86F52]"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -190,34 +169,34 @@ export default function Navbar({ onOpenQuoteModal, onOpenSearchModal, onOpenBook
       >
         {/* Backdrop */}
         <div 
-          className="absolute inset-0 bg-black/75 backdrop-blur-sm"
+          className="absolute inset-0 bg-[#34322E]/50 backdrop-blur-sm"
           onClick={() => setMobileMenuOpen(false)}
         />
 
         {/* Sliding Menu Panel */}
         <div 
-          className={`absolute top-0 right-0 w-[85%] max-w-sm h-full bg-[#16171B] text-[#FBF9F5] shadow-2xl p-6 flex flex-col justify-between transition-transform duration-300 ease-out border-l border-white/10 ${
+          className={`absolute top-0 right-0 w-[85%] max-w-sm h-full bg-[#FFFDF9] text-[#34322E] shadow-2xl p-6 flex flex-col justify-between transition-transform duration-300 ease-out border-l border-[#EDE5D8] ${
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
           <div>
-            <div className="flex items-center justify-between pb-5 border-b border-white/10">
+            <div className="flex items-center justify-between pb-5 border-b border-[#EDE5D8]">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-sm bg-[#C27D56] flex items-center justify-center text-white font-display-luxury font-bold text-sm">
+                <div className="w-8 h-8 rounded-sm bg-[#B86F52] flex items-center justify-center text-[#FFFDF9] font-display-luxury font-bold text-sm">
                   A
                 </div>
                 <div>
-                  <span className="font-display-luxury font-bold tracking-widest text-base block">
+                  <span className="font-display-luxury font-bold tracking-widest text-base block text-[#34322E]">
                     {BRAND_INFO.name}
                   </span>
-                  <span className="text-[8px] uppercase tracking-widest text-[#C27D56] block">
+                  <span className="text-[8px] uppercase tracking-widest text-[#B86F52] block">
                     {BRAND_INFO.tagline}
                   </span>
                 </div>
               </div>
               <button 
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-1.5 text-gray-400 hover:text-white"
+                className="p-1.5 text-[#777168] hover:text-[#34322E]"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -234,32 +213,32 @@ export default function Navbar({ onOpenQuoteModal, onOpenSearchModal, onOpenBook
                   }}
                   className={`text-sm tracking-widest uppercase font-medium py-3 px-3 rounded-sm flex items-center justify-between transition-colors ${
                     activeNav === link.id
-                      ? 'bg-[#C27D56]/20 text-[#DFBD69] font-semibold'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                      ? 'bg-[#B86F52]/10 text-[#B86F52] font-semibold border-l-2 border-[#B86F52]'
+                      : 'text-[#777168] hover:text-[#34322E] hover:bg-[#EDE5D8]/50'
                   }`}
                 >
                   <span className="flex items-center gap-2">
                     {link.name}
                     {link.isSpecial && (
-                      <span className="text-[9px] px-1.5 py-0.5 bg-[#C27D56] text-white rounded-full">
+                      <span className="text-[9px] px-1.5 py-0.5 bg-[#B86F52] text-[#FFFDF9] rounded-full">
                         3D
                       </span>
                     )}
                   </span>
-                  <span className="text-gray-600 text-xs">→</span>
+                  <span className="text-[#C9A875] text-xs">→</span>
                 </a>
               ))}
             </div>
           </div>
 
           {/* Bottom Actions */}
-          <div className="pt-6 border-t border-white/10 space-y-3">
+          <div className="pt-6 border-t border-[#EDE5D8] space-y-3">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenQuoteModal();
               }}
-              className="w-full py-3 bg-[#C27D56] hover:bg-[#A85A32] text-white font-semibold text-xs tracking-widest uppercase rounded-sm flex items-center justify-center gap-2 shadow-lg"
+              className="w-full py-3 bg-[#B86F52] hover:bg-[#A55E42] text-[#FFFDF9] font-semibold text-xs tracking-widest uppercase rounded-sm flex items-center justify-center gap-2 shadow-lg transition-colors"
             >
               <span>Instant Quote Estimator</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -270,13 +249,13 @@ export default function Navbar({ onOpenQuoteModal, onOpenSearchModal, onOpenBook
                 setMobileMenuOpen(false);
                 onOpenBookingModal();
               }}
-              className="w-full py-3 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white font-medium text-xs tracking-widest uppercase rounded-sm flex items-center justify-center gap-2 border border-white/10"
+              className="w-full py-3 bg-[#EDE5D8] hover:bg-[#D9CEBC] text-[#34322E] hover:text-[#34322E] font-medium text-xs tracking-widest uppercase rounded-sm flex items-center justify-center gap-2 border border-[#D9CEBC] transition-colors"
             >
-              <Compass className="w-3.5 h-3.5 text-[#C27D56]" />
+              <Compass className="w-3.5 h-3.5 text-[#B86F52]" />
               <span>Book Showroom Tour</span>
             </button>
 
-            <div className="text-center pt-2 text-[11px] text-gray-500">
+            <div className="text-center pt-2 text-[11px] text-[#777168]">
               Showroom Concierge: {BRAND_INFO.phone}
             </div>
           </div>

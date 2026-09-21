@@ -28,7 +28,7 @@ const HERO_SLIDES = [
     titleHighlight: "Pure Architecture.",
     subtitle: "Fluted 3D relief ceramics and monolithic porcelain slabs engineered for grand living.",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=90",
-    badge: "Architectural Noir Edition",
+    badge: "Architectural Reserve Edition",
     surfaceName: "Pietra Di Val Quartzite Slab",
     finish: "Bush-Hammered Anti-Slip R11"
   },
@@ -57,7 +57,7 @@ export default function Hero({ onOpenQuoteModal, onOpenVisualizer, onExploreColl
   const slide = HERO_SLIDES[currentSlide];
 
   return (
-    <section id="home" className="relative min-h-[92vh] sm:min-h-screen flex items-center bg-[#121316] text-[#FBF9F5] overflow-hidden">
+    <section id="home" className="relative min-h-[92vh] sm:min-h-screen flex items-center bg-[#F8F5EF] text-[#34322E] overflow-hidden">
       {/* Background Slides with Cross-fade & subtle Ken Burns scale */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -72,47 +72,51 @@ export default function Hero({ onOpenQuoteModal, onOpenVisualizer, onExploreColl
           />
         </AnimatePresence>
 
-        {/* Sophisticated Multi-layer Luxury Dark Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#121316]/95 via-[#121316]/70 to-[#121316]/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-black/40" />
+        {/* Warm Light Gradient Overlays — no dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F8F5EF]/92 via-[#F8F5EF]/60 to-[#F8F5EF]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#EDE5D8]/60 via-transparent to-transparent" />
         
-        {/* Subtle Architectural Grid Lines Overlay */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
+        {/* Subtle warm grid */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
       </div>
 
-      {/* Floating Architectural Accent Elements */}
+      {/* Floating Architectural Accent — warm card */}
       <div className="absolute top-20 right-10 hidden xl:block z-10">
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="p-5 backdrop-blur-xl bg-black/40 border border-white/10 rounded-sm shadow-2xl max-w-xs"
+          className="p-5 backdrop-blur-xl bg-[#FFFDF9]/90 border border-[#C9A875]/30 rounded-sm shadow-xl max-w-xs"
         >
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-[#C27D56] font-semibold mb-1">
+          <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-[#B86F52] font-semibold mb-1">
             <Sparkles className="w-3.5 h-3.5" />
             Featured Material
           </div>
-          <p className="font-display-luxury text-sm font-semibold text-white">
+          <p className="font-display-luxury text-sm font-semibold text-[#34322E]">
             {slide.surfaceName}
           </p>
-          <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/10 text-[11px] text-gray-400">
+          <div className="flex items-center justify-between mt-3 pt-3 border-t border-[#EDE5D8] text-[11px] text-[#777168]">
             <span>{slide.finish}</span>
-            <span className="text-[#C27D56] font-medium">9mm & 12mm</span>
+            <span className="text-[#B86F52] font-medium">9mm &amp; 12mm</span>
           </div>
         </motion.div>
       </div>
+
+      {/* Floating soft shape decorations */}
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#C9A875]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/3 w-64 h-64 bg-[#B86F52]/06 rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Hero Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
         <div className="max-w-3xl">
           
-          {/* Subtle Top Badge */}
+          {/* Top Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#EBE5DC] text-xs uppercase tracking-[0.25em] font-medium mb-6"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/80 backdrop-blur-md border border-[#C9A875]/40 text-[#34322E] text-xs uppercase tracking-[0.25em] font-medium mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-[#C27D56]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#B86F52]"></span>
             <span>{slide.badge}</span>
           </motion.div>
 
@@ -122,10 +126,10 @@ export default function Hero({ onOpenQuoteModal, onOpenVisualizer, onExploreColl
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2 }}
-            className="font-display-luxury text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-6"
+            className="font-display-luxury text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#34322E] leading-[1.08] mb-6"
           >
             {slide.title} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#DFBD69] via-[#C27D56] to-[#E5A882] italic font-serif-luxury font-normal">
+            <span className="text-[#B86F52] italic font-serif-luxury font-normal">
               {slide.titleHighlight}
             </span>
           </motion.h1>
@@ -136,7 +140,7 @@ export default function Hero({ onOpenQuoteModal, onOpenVisualizer, onExploreColl
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="text-base sm:text-xl text-[#D9D0C3] font-light leading-relaxed mb-10 max-w-2xl"
+            className="text-base sm:text-xl text-[#777168] font-light leading-relaxed mb-10 max-w-2xl"
           >
             {slide.subtitle}
           </motion.p>
@@ -148,7 +152,7 @@ export default function Hero({ onOpenQuoteModal, onOpenVisualizer, onExploreColl
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5"
           >
-            {/* Primary CTA */}
+            {/* Primary CTA — Terracotta */}
             <a
               href="#collections"
               onClick={(e) => {
@@ -156,21 +160,21 @@ export default function Hero({ onOpenQuoteModal, onOpenVisualizer, onExploreColl
                 const elem = document.querySelector('#collections');
                 if (elem) elem.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-4 bg-[#C27D56] hover:bg-[#A85A32] text-white text-xs sm:text-sm font-semibold tracking-widest uppercase rounded-sm transition-all duration-300 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl hover:scale-[1.02] group"
+              className="px-8 py-4 bg-[#B86F52] hover:bg-[#A55E42] text-[#FFFDF9] text-xs sm:text-sm font-semibold tracking-widest uppercase rounded-sm transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:scale-[1.02] group"
             >
               <span>Explore Collection</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
 
-            {/* Secondary CTA */}
+            {/* Secondary CTA — Soft Olive */}
             <button
               onClick={onOpenQuoteModal}
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 text-xs sm:text-sm font-semibold tracking-widest uppercase rounded-sm transition-all duration-300 flex items-center justify-center gap-2 hover:border-white/40"
+              className="px-8 py-4 bg-[#7B8065]/15 hover:bg-[#7B8065]/25 backdrop-blur-md text-[#34322E] border border-[#7B8065]/40 text-xs sm:text-sm font-semibold tracking-widest uppercase rounded-sm transition-all duration-300 flex items-center justify-center gap-2 hover:border-[#7B8065]/70"
             >
               <span>Get a Quote</span>
             </button>
 
-            {/* Interactive Visualizer Link */}
+            {/* 3D Visualizer Link */}
             <a
               href="#visualizer"
               onClick={(e) => {
@@ -178,9 +182,9 @@ export default function Hero({ onOpenQuoteModal, onOpenVisualizer, onExploreColl
                 const elem = document.querySelector('#visualizer');
                 if (elem) elem.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center justify-center gap-2 text-xs uppercase tracking-widest text-[#D9D0C3] hover:text-[#C27D56] transition-colors py-2 px-1"
+              className="inline-flex items-center justify-center gap-2 text-xs uppercase tracking-widest text-[#777168] hover:text-[#B86F52] transition-colors py-2 px-1"
             >
-              <Layers className="w-4 h-4 text-[#C27D56]" />
+              <Layers className="w-4 h-4 text-[#B86F52]" />
               <span className="underline underline-offset-4">Try 3D Room Visualizer</span>
             </a>
           </motion.div>
@@ -190,25 +194,25 @@ export default function Hero({ onOpenQuoteModal, onOpenVisualizer, onExploreColl
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
-            className="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs text-[#A8A297]"
+            className="mt-14 pt-8 border-t border-[#C9A875]/30 grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs text-[#777168]"
           >
             <div className="flex items-center gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#C27D56] shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#B86F52] shrink-0" />
               <span>Zero-Porosity Vitrification</span>
             </div>
             <div className="flex items-center gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#C27D56] shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#B86F52] shrink-0" />
               <span>Bookmatched Continuous Veining</span>
             </div>
             <div className="flex items-center gap-2.5 col-span-2 sm:col-span-1">
-              <CheckCircle2 className="w-4 h-4 text-[#C27D56] shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#B86F52] shrink-0" />
               <span>Architectural Sample Delivery</span>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Slide Indicators & Navigation Controls */}
+      {/* Slide Indicators */}
       <div className="absolute bottom-8 right-6 sm:right-12 z-20 flex items-center gap-3">
         {HERO_SLIDES.map((s, idx) => (
           <button
@@ -216,7 +220,7 @@ export default function Hero({ onOpenQuoteModal, onOpenVisualizer, onExploreColl
             onClick={() => setCurrentSlide(idx)}
             aria-label={`Go to slide ${idx + 1}`}
             className={`h-1.5 transition-all duration-500 rounded-full ${
-              currentSlide === idx ? 'w-10 bg-[#C27D56]' : 'w-2.5 bg-white/30 hover:bg-white/60'
+              currentSlide === idx ? 'w-10 bg-[#B86F52]' : 'w-2.5 bg-[#34322E]/25 hover:bg-[#34322E]/50'
             }`}
           />
         ))}

@@ -10,19 +10,21 @@
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
-    color: #1B1C20;
-    background-color: #FBF9F5;
+    color: #34322E;
+    background-color: #F8F5EF;
   }
 
   body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    background-color: #F8F5EF;
+    color: #34322E;
   }
 
   ::selection {
-    background-color: #C27D56;
-    color: #FFFFFF;
+    background-color: #B86F52;
+    color: #FFFDF9;
   }
 }
 
@@ -44,30 +46,30 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F0E8;
+  background: #EDE5D8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D9D0C3;
+  background: #C9A875;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C27D56;
+  background: #B86F52;
 }
 
 /* Subtle Architectural Grid and Texture helpers */
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(27, 28, 32, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(27, 28, 32, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(52, 50, 46, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(52, 50, 46, 0.04) 1px, transparent 1px);
 }
 
 .bg-radial-luxury {
-  background: radial-gradient(circle at 50% 20%, rgba(194, 125, 86, 0.08) 0%, rgba(251, 249, 245, 0) 70%);
+  background: radial-gradient(circle at 50% 20%, rgba(184, 111, 82, 0.08) 0%, rgba(248, 245, 239, 0) 70%);
 }
 
-.bg-dark-radial {
-  background: radial-gradient(circle at 50% 30%, rgba(194, 125, 86, 0.15) 0%, rgba(18, 19, 22, 1) 75%);
+.bg-warm-radial {
+  background: radial-gradient(circle at 50% 30%, rgba(184, 111, 82, 0.12) 0%, rgba(237, 229, 216, 0.95) 75%);
 }
 
 /* Keyframe animations for marquee */

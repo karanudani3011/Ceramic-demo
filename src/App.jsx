@@ -37,7 +37,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FBF9F5] text-[#1B1C20] font-sans-modern antialiased selection:bg-[#C27D56] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#F8F5EF] text-[#34322E] font-sans-modern antialiased selection:bg-[#B86F52] selection:text-[#FFFDF9]">
       
       {/* Top Navbar */}
       <Navbar
@@ -144,7 +144,7 @@ export default function App() {
       <div className="fixed bottom-6 right-6 z-30 flex flex-col gap-2.5">
         <button
           onClick={() => handleOpenQuoteModal()}
-          className="group flex items-center gap-2.5 px-4 py-3 bg-[#C27D56] hover:bg-[#A85A32] text-white text-xs font-semibold uppercase tracking-widest rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
+          className="group flex items-center gap-2.5 px-4 py-3 bg-[#B86F52] hover:bg-[#A55E42] text-[#FFFDF9] text-xs font-semibold uppercase tracking-widest rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
           aria-label="Calculate Tile Estimate"
         >
           <Calculator className="w-4 h-4" />

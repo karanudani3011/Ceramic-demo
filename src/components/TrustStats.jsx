@@ -28,15 +28,15 @@ function CounterItem({ value, suffix, label, description, inView }) {
   }, [inView, value]);
 
   return (
-    <div className="flex flex-col p-6 sm:p-8 bg-[#F5F0E8]/60 border border-[#EBE5DC] rounded-sm hover:border-[#C27D56]/50 transition-all duration-500 group shadow-sm hover:shadow-md">
-      <div className="flex items-baseline gap-1 font-display-luxury text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1B1C20] group-hover:text-[#A85A32] transition-colors">
+    <div className="flex flex-col p-6 sm:p-8 bg-[#FFFDF9] border border-[#EDE5D8] rounded-sm hover:border-[#B86F52]/50 transition-all duration-500 group shadow-sm hover:shadow-md">
+      <div className="flex items-baseline gap-1 font-display-luxury text-4xl sm:text-5xl lg:text-6xl font-bold text-[#B86F52] group-hover:text-[#A55E42] transition-colors">
         <span>{inView ? count : 0}</span>
-        <span className="text-[#C27D56] text-3xl sm:text-4xl">{suffix}</span>
+        <span className="text-[#C9A875] text-3xl sm:text-4xl">{suffix}</span>
       </div>
-      <div className="mt-3 text-sm sm:text-base font-semibold tracking-wider text-[#1B1C20] uppercase font-display-luxury">
+      <div className="mt-3 text-sm sm:text-base font-semibold tracking-wider text-[#34322E] uppercase font-display-luxury">
         {label}
       </div>
-      <p className="mt-1.5 text-xs sm:text-sm text-[#6E717D] leading-relaxed">
+      <p className="mt-1.5 text-xs sm:text-sm text-[#777168] leading-relaxed">
         {description}
       </p>
     </div>
@@ -75,10 +75,10 @@ export default function TrustStats({ onOpenBookingModal }) {
   ];
 
   return (
-    <section ref={ref} className="py-20 lg:py-28 bg-[#FBF9F5] border-b border-[#EBE5DC] relative overflow-hidden">
-      {/* Background Decorative Accent */}
-      <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#C27D56]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
+    <section ref={ref} className="py-20 lg:py-28 bg-[#F8F5EF] border-b border-[#EDE5D8] relative overflow-hidden">
+      {/* Background Decorative Accents */}
+      <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#B86F52]/06 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#C9A875]/08 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -86,22 +86,22 @@ export default function TrustStats({ onOpenBookingModal }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-16 lg:mb-24">
           
           <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C27D56] font-semibold mb-3">
-              <span className="w-6 h-[1px] bg-[#C27D56]"></span>
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#B86F52] font-semibold mb-3">
+              <span className="w-6 h-[1px] bg-[#B86F52]"></span>
               Architectural Excellence
             </div>
             
-            <h2 className="font-display-luxury text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1B1C20] leading-[1.15]">
+            <h2 className="font-display-luxury text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#34322E] leading-[1.15]">
               Surfaces That Make a <br />
-              <span className="font-serif-luxury italic font-normal text-[#A85A32]">
+              <span className="font-serif-luxury italic font-normal text-[#B86F52]">
                 Definitive Statement.
               </span>
             </h2>
           </div>
 
-          <div className="lg:col-span-6 space-y-4 text-[#4E515D] text-sm sm:text-base leading-relaxed font-light">
+          <div className="lg:col-span-6 space-y-4 text-[#777168] text-sm sm:text-base leading-relaxed font-light">
             <p>
-              At <strong className="font-semibold text-[#1B1C20]">AURELIA Tiles & Ceramics</strong>, we believe every architectural space is defined by its foundational planes. We bridge time-honored Mediterranean stonecraft with cutting-edge Italian vitrification to engineer surfaces that outlive trends.
+              At <strong className="font-semibold text-[#34322E]">AURELIA Tiles &amp; Ceramics</strong>, we believe every architectural space is defined by its foundational planes. We bridge time-honored Mediterranean stonecraft with cutting-edge Italian vitrification to engineer surfaces that outlive trends.
             </p>
             <p>
               Every collection undergoes rigorous caliber selection, zero-porosity testing, and chromatic calibration to deliver ultra-luxury tactile resilience for architects, interior visionaries, and discerning homeowners worldwide.
@@ -109,7 +109,7 @@ export default function TrustStats({ onOpenBookingModal }) {
             <div className="pt-2">
               <button 
                 onClick={onOpenBookingModal}
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-[#C27D56] hover:text-[#A85A32] transition-colors border-b border-[#C27D56]/40 pb-1"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-[#B86F52] hover:text-[#A55E42] transition-colors border-b border-[#B86F52]/40 pb-1"
               >
                 <span>Experience Our New York Flagship Showroom</span>
                 <span>→</span>
@@ -133,18 +133,18 @@ export default function TrustStats({ onOpenBookingModal }) {
         </div>
 
         {/* Architectural Trust Badges */}
-        <div className="mt-16 pt-10 border-t border-[#EBE5DC] flex flex-wrap items-center justify-between gap-6 text-xs text-[#6E717D]">
+        <div className="mt-16 pt-10 border-t border-[#EDE5D8] flex flex-wrap items-center justify-between gap-6 text-xs text-[#777168]">
           <div className="flex items-center gap-3">
-            <ShieldCheck className="w-5 h-5 text-[#C27D56]" />
-            <span>ISO 9001 & CE Certified European Quality Standards</span>
+            <ShieldCheck className="w-5 h-5 text-[#B86F52]" />
+            <span>ISO 9001 &amp; CE Certified European Quality Standards</span>
           </div>
           <div className="flex items-center gap-3">
-            <Award className="w-5 h-5 text-[#C27D56]" />
+            <Award className="w-5 h-5 text-[#B86F52]" />
             <span>25-Year Architectural Surface Warranty</span>
           </div>
           <div className="flex items-center gap-3">
-            <Globe className="w-5 h-5 text-[#C27D56]" />
-            <span>Direct Sourcing From Sassuolo & Castellón</span>
+            <Globe className="w-5 h-5 text-[#B86F52]" />
+            <span>Direct Sourcing From Sassuolo &amp; Castellón</span>
           </div>
         </div>
 

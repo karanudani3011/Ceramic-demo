@@ -24,27 +24,33 @@ export default function Testimonials() {
   const item = TESTIMONIALS[currentIndex];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#F5F0E8] border-b border-[#EBE5DC] relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[#EDE5D8] border-b border-[#D9CEBC] relative overflow-hidden">
+      {/* Subtle warm glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-64 bg-[#C9A875]/10 rounded-full blur-3xl pointer-events-none" />
+
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C27D56] font-semibold mb-3">
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#B86F52] font-semibold mb-3">
             <Quote className="w-4 h-4" />
             Architectural Endorsements
           </div>
-          <h2 className="font-display-luxury text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1B1C20]">
+          <h2 className="font-display-luxury text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#34322E]">
             Trusted by the World's Finest Creators
           </h2>
         </div>
 
-        {/* Testimonial Display Box */}
-        <div className="relative bg-white border border-[#EBE5DC] rounded-sm p-8 sm:p-12 md:p-16 shadow-xl">
+        {/* Testimonial Display Box — cream card */}
+        <div className="relative bg-[#FFFDF9] border border-[#EDE5D8] rounded-sm p-8 sm:p-12 md:p-16 shadow-xl">
           
           {/* Subtle Quote Watermark */}
-          <div className="absolute top-6 right-8 text-[#EBE5DC] select-none pointer-events-none font-serif-luxury text-8xl opacity-40 leading-none">
-            “
+          <div className="absolute top-6 right-8 text-[#C9A875]/25 select-none pointer-events-none font-serif-luxury text-8xl opacity-60 leading-none">
+            "
           </div>
+
+          {/* Decorative top champagne-gold line */}
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C9A875]/50 to-transparent rounded-t-sm" />
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -55,35 +61,35 @@ export default function Testimonials() {
               transition={{ duration: 0.45 }}
               className="space-y-6"
             >
-              {/* Star Rating */}
-              <div className="flex items-center gap-1 text-[#C27D56]">
+              {/* Star Rating — terracotta stars */}
+              <div className="flex items-center gap-1 text-[#B86F52]">
                 {[...Array(item.rating)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
 
               {/* Quote Statement */}
-              <blockquote className="font-serif-luxury text-xl sm:text-2xl md:text-3xl text-[#1B1C20] italic leading-relaxed font-normal">
+              <blockquote className="font-serif-luxury text-xl sm:text-2xl md:text-3xl text-[#34322E] italic leading-relaxed font-normal">
                 "{item.quote}"
               </blockquote>
 
               {/* Client Profile */}
-              <div className="pt-6 border-t border-[#EBE5DC] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="pt-6 border-t border-[#EDE5D8] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-display-luxury text-base sm:text-lg font-bold text-[#1B1C20]">
+                    <span className="font-display-luxury text-base sm:text-lg font-bold text-[#34322E]">
                       {item.clientName}
                     </span>
                     {item.verified && (
-                      <CheckCircle2 className="w-4 h-4 text-[#C27D56]" />
+                      <CheckCircle2 className="w-4 h-4 text-[#B86F52]" />
                     )}
                   </div>
-                  <div className="text-xs text-[#6E717D] mt-0.5">
-                    {item.role} • <span className="text-[#1B1C20]">{item.location}</span>
+                  <div className="text-xs text-[#777168] mt-0.5">
+                    {item.role} • <span className="text-[#34322E]">{item.location}</span>
                   </div>
                 </div>
 
-                <div className="px-3 py-1 bg-[#F5F0E8] border border-[#EBE5DC] text-[11px] font-mono uppercase tracking-wider text-[#A85A32] rounded-sm self-start sm:self-auto">
+                <div className="px-3 py-1 bg-[#EDE5D8] border border-[#D9CEBC] text-[11px] font-mono uppercase tracking-wider text-[#B86F52] rounded-sm self-start sm:self-auto">
                   Project: {item.projectType}
                 </div>
               </div>
@@ -91,7 +97,7 @@ export default function Testimonials() {
           </AnimatePresence>
 
           {/* Carousel Arrows */}
-          <div className="flex items-center justify-between mt-8 pt-6 border-t border-[#EBE5DC]/60">
+          <div className="flex items-center justify-between mt-8 pt-6 border-t border-[#EDE5D8]/60">
             {/* Dots */}
             <div className="flex items-center gap-2">
               {TESTIMONIALS.map((_, idx) => (
@@ -99,7 +105,7 @@ export default function Testimonials() {
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   className={`h-1.5 transition-all duration-300 rounded-full ${
-                    currentIndex === idx ? 'w-8 bg-[#C27D56]' : 'w-2 bg-[#D9D0C3]'
+                    currentIndex === idx ? 'w-8 bg-[#B86F52]' : 'w-2 bg-[#C9A875]/50'
                   }`}
                   aria-label={`Go to review ${idx + 1}`}
                 />
@@ -110,14 +116,14 @@ export default function Testimonials() {
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrev}
-                className="p-2.5 rounded-full border border-[#EBE5DC] hover:bg-[#1B1C20] hover:text-white transition-colors"
+                className="p-2.5 rounded-full border border-[#EDE5D8] hover:bg-[#B86F52] hover:border-[#B86F52] hover:text-[#FFFDF9] text-[#34322E] transition-colors"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={handleNext}
-                className="p-2.5 rounded-full border border-[#EBE5DC] hover:bg-[#1B1C20] hover:text-white transition-colors"
+                className="p-2.5 rounded-full border border-[#EDE5D8] hover:bg-[#B86F52] hover:border-[#B86F52] hover:text-[#FFFDF9] text-[#34322E] transition-colors"
                 aria-label="Next review"
               >
                 <ChevronRight className="w-4 h-4" />

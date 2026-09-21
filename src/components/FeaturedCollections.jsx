@@ -17,23 +17,26 @@ export default function FeaturedCollections({ onOpenQuoteModal, onOpenVisualizer
   const currentItem = FEATURED_COLLECTIONS[activeTab];
 
   return (
-    <section id="collections" className="py-20 lg:py-28 bg-[#121316] text-[#FBF9F5] border-b border-[#2A2C33] relative overflow-hidden">
-      {/* Background Architectural Grid Lines */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
+    <section id="collections" className="py-20 lg:py-28 bg-[#F8F5EF] text-[#34322E] border-b border-[#EDE5D8] relative overflow-hidden">
+      {/* Soft decorative architectural grid */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
+      {/* Warm radial glow */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#B86F52]/05 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#C9A875]/08 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C27D56] font-semibold mb-3">
-              <span className="w-6 h-[1px] bg-[#C27D56]"></span>
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#B86F52] font-semibold mb-3">
+              <span className="w-6 h-[1px] bg-[#B86F52]"></span>
               Private Reserve Slabs
             </div>
-            <h2 className="font-display-luxury text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h2 className="font-display-luxury text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#34322E]">
               Featured Collections
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-[#A8A297] max-w-xl font-light">
+            <p className="mt-3 text-sm sm:text-base text-[#777168] max-w-xl font-light">
               Master-grade monolithic surfaces engineered from pure Italian quartz, kaolin clay, and calibrated natural pigments.
             </p>
           </div>
@@ -46,8 +49,8 @@ export default function FeaturedCollections({ onOpenQuoteModal, onOpenVisualizer
                 onClick={() => setActiveTab(idx)}
                 className={`px-4 py-2.5 text-xs font-semibold uppercase tracking-wider rounded-sm transition-all duration-300 ${
                   activeTab === idx
-                    ? 'bg-[#C27D56] text-white shadow-lg'
-                    : 'bg-white/5 hover:bg-white/10 text-[#D9D0C3] border border-white/10'
+                    ? 'bg-[#B86F52] text-[#FFFDF9] shadow-lg'
+                    : 'bg-[#FFFDF9] hover:bg-[#EDE5D8] text-[#777168] border border-[#EDE5D8]'
                 }`}
               >
                 {col.name.split(' ')[0]} {col.name.split(' ')[1] || ''}
@@ -62,7 +65,7 @@ export default function FeaturedCollections({ onOpenQuoteModal, onOpenVisualizer
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 bg-[#1B1C20] border border-white/10 rounded-sm p-6 sm:p-10 shadow-2xl"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 bg-[#FFFDF9] border border-[#EDE5D8] rounded-sm p-6 sm:p-10 shadow-lg"
         >
           {/* Left Visual Stage */}
           <div className="lg:col-span-7 flex flex-col space-y-4">
@@ -72,35 +75,39 @@ export default function FeaturedCollections({ onOpenQuoteModal, onOpenVisualizer
                 alt={currentItem.name}
                 className="w-full h-full object-cover luxury-image-zoom transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+              {/* Warm gradient at bottom */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#34322E]/60 via-transparent to-[#34322E]/10" />
               
+              {/* Decorative terracotta line accent */}
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#B86F52] via-[#C9A875] to-transparent" />
+
               <div className="absolute top-4 left-4">
-                <span className="px-3.5 py-1.5 bg-black/60 backdrop-blur-md border border-[#C27D56]/50 text-[#DFBD69] text-xs uppercase tracking-widest font-semibold rounded-full">
+                <span className="px-3.5 py-1.5 bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C9A875]/40 text-[#B86F52] text-xs uppercase tracking-widest font-semibold rounded-full">
                   {currentItem.collectionSeries}
                 </span>
               </div>
 
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-white/90 bg-black/60 backdrop-blur-md p-3 rounded-sm border border-white/10">
-                <span className="font-mono text-[#D9D0C3]">Origin: {currentItem.origin}</span>
-                <span className="text-[#C27D56] font-semibold">{currentItem.thickness}</span>
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-[#FFFDF9] bg-[#34322E]/70 backdrop-blur-md p-3 rounded-sm border border-[#FFFDF9]/15">
+                <span className="font-mono text-[#EDE5D8]">Origin: {currentItem.origin}</span>
+                <span className="text-[#C9A875] font-semibold">{currentItem.thickness}</span>
               </div>
             </div>
 
             {/* Secondary Thumbnail Strip */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="relative h-24 overflow-hidden rounded-sm border border-white/10 group cursor-pointer">
+              <div className="relative h-24 overflow-hidden rounded-sm border border-[#EDE5D8] group cursor-pointer">
                 <img src={currentItem.secondaryImage} alt="Detail" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center text-[10px] uppercase font-mono tracking-widest text-white">
+                <div className="absolute inset-0 bg-[#34322E]/25 flex items-center justify-center text-[10px] uppercase font-mono tracking-widest text-[#FFFDF9]">
                   Close Texture
                 </div>
               </div>
-              <div className="p-3 bg-white/5 border border-white/10 rounded-sm flex flex-col justify-center">
-                <span className="text-[10px] uppercase tracking-widest text-[#A8A297]">Absorption</span>
-                <span className="text-xs font-semibold text-white mt-1">{currentItem.absorption}</span>
+              <div className="p-3 bg-[#EDE5D8] border border-[#D9CEBC] rounded-sm flex flex-col justify-center">
+                <span className="text-[10px] uppercase tracking-widest text-[#777168]">Absorption</span>
+                <span className="text-xs font-semibold text-[#34322E] mt-1">{currentItem.absorption}</span>
               </div>
-              <div className="p-3 bg-white/5 border border-white/10 rounded-sm flex flex-col justify-center">
-                <span className="text-[10px] uppercase tracking-widest text-[#A8A297]">Rating</span>
-                <span className="text-xs font-semibold text-[#DFBD69] mt-1">{currentItem.peiRating}</span>
+              <div className="p-3 bg-[#EDE5D8] border border-[#D9CEBC] rounded-sm flex flex-col justify-center">
+                <span className="text-[10px] uppercase tracking-widest text-[#777168]">Rating</span>
+                <span className="text-xs font-semibold text-[#B86F52] mt-1">{currentItem.peiRating}</span>
               </div>
             </div>
           </div>
@@ -108,35 +115,37 @@ export default function FeaturedCollections({ onOpenQuoteModal, onOpenVisualizer
           {/* Right Specification & Story Narrative */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             <div>
-              <div className="text-xs uppercase tracking-[0.25em] text-[#C27D56] font-semibold mb-2">
+              <div className="text-xs uppercase tracking-[0.25em] text-[#B86F52] font-semibold mb-2">
                 Curated Signature Slab
               </div>
 
-              <h3 className="font-display-luxury text-3xl sm:text-4xl font-bold text-white mb-3">
+              <h3 className="font-display-luxury text-3xl sm:text-4xl font-bold text-[#34322E] mb-3">
                 {currentItem.name}
               </h3>
 
-              <p className="text-base text-[#DFBD69] italic font-serif-luxury mb-4">
+              <p className="text-base text-[#B86F52] italic font-serif-luxury mb-4">
                 "{currentItem.tagline}"
               </p>
 
-              <p className="text-sm text-[#D9D0C3] leading-relaxed font-light mb-6">
+              <p className="text-sm text-[#777168] leading-relaxed font-light mb-6">
                 {currentItem.description}
               </p>
 
               {/* Technical Specifications Grid */}
-              <div className="space-y-3 pt-4 border-t border-white/10">
-                <div className="flex justify-between text-xs py-1.5 border-b border-white/5">
-                  <span className="text-[#A8A297] uppercase tracking-wider">Surface Finish</span>
-                  <span className="font-semibold text-white">{currentItem.finish}</span>
+              <div className="space-y-3 pt-4 border-t border-[#EDE5D8]">
+                {/* Thin champagne gold accent line */}
+                <div className="w-full h-[1px] bg-gradient-to-r from-[#C9A875]/60 to-transparent -mt-[1px] mb-3" />
+                <div className="flex justify-between text-xs py-1.5 border-b border-[#EDE5D8]">
+                  <span className="text-[#777168] uppercase tracking-wider">Surface Finish</span>
+                  <span className="font-semibold text-[#34322E]">{currentItem.finish}</span>
                 </div>
-                <div className="flex justify-between text-xs py-1.5 border-b border-white/5">
-                  <span className="text-[#A8A297] uppercase tracking-wider">Available Formats</span>
-                  <span className="font-mono text-white text-right">{currentItem.sizes.join(' • ')}</span>
+                <div className="flex justify-between text-xs py-1.5 border-b border-[#EDE5D8]">
+                  <span className="text-[#777168] uppercase tracking-wider">Available Formats</span>
+                  <span className="font-mono text-[#34322E] text-right">{currentItem.sizes.join(' • ')}</span>
                 </div>
-                <div className="flex justify-between text-xs py-1.5 border-b border-white/5">
-                  <span className="text-[#A8A297] uppercase tracking-wider">Ideal Application</span>
-                  <span className="font-medium text-white text-right">{currentItem.applications}</span>
+                <div className="flex justify-between text-xs py-1.5 border-b border-[#EDE5D8]">
+                  <span className="text-[#777168] uppercase tracking-wider">Ideal Application</span>
+                  <span className="font-medium text-[#34322E] text-right">{currentItem.applications}</span>
                 </div>
               </div>
             </div>
@@ -145,9 +154,9 @@ export default function FeaturedCollections({ onOpenQuoteModal, onOpenVisualizer
             <div className="pt-6 space-y-3">
               <button
                 onClick={() => onOpenQuoteModal(currentItem.name)}
-                className="w-full py-3.5 bg-[#C27D56] hover:bg-[#A85A32] text-white text-xs font-semibold uppercase tracking-widest rounded-sm transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                className="w-full py-3.5 bg-[#B86F52] hover:bg-[#A55E42] text-[#FFFDF9] text-xs font-semibold uppercase tracking-widest rounded-sm transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
               >
-                <span>Request Sample Box & Quotation</span>
+                <span>Request Sample Box &amp; Quotation</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -158,9 +167,9 @@ export default function FeaturedCollections({ onOpenQuoteModal, onOpenVisualizer
                   const elem = document.querySelector('#visualizer');
                   if (elem) elem.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full py-3 bg-white/5 hover:bg-white/10 text-[#D9D0C3] hover:text-white text-xs font-medium uppercase tracking-widest rounded-sm transition-colors flex items-center justify-center gap-2 border border-white/10"
+                className="w-full py-3 bg-[#EDE5D8] hover:bg-[#D9CEBC] text-[#34322E] hover:text-[#34322E] text-xs font-medium uppercase tracking-widest rounded-sm transition-colors flex items-center justify-center gap-2 border border-[#D9CEBC]"
               >
-                <Layers className="w-4 h-4 text-[#C27D56]" />
+                <Layers className="w-4 h-4 text-[#7B8065]" />
                 <span>Test In 3D Room Visualizer</span>
               </a>
             </div>

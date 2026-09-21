@@ -74,22 +74,22 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
   };
 
   return (
-    <footer id="contact" className="bg-[#0D0E10] text-[#D9D0C3] border-t border-[#2A2C33] relative overflow-hidden">
+    <footer id="contact" className="bg-[#EDE5D8] text-[#34322E] border-t border-[#D9CEBC] relative overflow-hidden">
       
       {/* Top Newsletter & Catalog Download Banner */}
-      <div className="border-b border-[#22242B] py-12 bg-[#121316]">
+      <div className="border-b border-[#D9CEBC] py-12 bg-[#E5D9CA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-6 space-y-2">
-              <span className="text-[11px] uppercase tracking-[0.25em] text-[#C27D56] font-semibold flex items-center gap-2">
+              <span className="text-[11px] uppercase tracking-[0.25em] text-[#B86F52] font-semibold flex items-center gap-2">
                 <Sparkles className="w-3.5 h-3.5" />
                 2026 Master Lookbook
               </span>
-              <h3 className="font-display-luxury text-2xl sm:text-3xl font-bold text-white">
+              <h3 className="font-display-luxury text-2xl sm:text-3xl font-bold text-[#34322E]">
                 Download the Digital Architectural Catalog
               </h3>
-              <p className="text-xs sm:text-sm text-[#A8A297] font-light">
+              <p className="text-xs sm:text-sm text-[#777168] font-light">
                 Receive full technical datasheets, high-res tile textures, slip ratings, and CAD Hatch patterns.
               </p>
             </div>
@@ -102,18 +102,18 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter architectural studio email..."
                   required
-                  className="flex-1 px-4 py-3.5 bg-black/60 border border-white/15 text-white rounded-sm text-xs focus:outline-none focus:border-[#C27D56] placeholder:text-gray-500"
+                  className="flex-1 px-4 py-3.5 bg-[#FFFDF9] border border-[#D9CEBC] text-[#34322E] rounded-sm text-xs focus:outline-none focus:border-[#B86F52] placeholder:text-[#777168]/60"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3.5 bg-[#C27D56] hover:bg-[#A85A32] text-white text-xs font-semibold uppercase tracking-widest rounded-sm transition-colors flex items-center justify-center gap-2 shadow-lg"
+                  className="px-6 py-3.5 bg-[#B86F52] hover:bg-[#A55E42] text-[#FFFDF9] text-xs font-semibold uppercase tracking-widest rounded-sm transition-colors flex items-center justify-center gap-2 shadow-lg"
                 >
                   <span>{subscribed ? 'Catalog Sent!' : 'Get 2026 Catalog'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </form>
               {subscribed && (
-                <p className="text-xs text-[#DFBD69] mt-2 flex items-center gap-1.5">
+                <p className="text-xs text-[#7B8065] mt-2 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   Thank you! The digital lookbook download link has been dispatched to your inbox.
                 </p>
@@ -131,22 +131,25 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-sm bg-[#C27D56] text-white flex items-center justify-center font-display-luxury font-bold text-xl">
+              <div className="w-10 h-10 rounded-sm bg-[#B86F52] text-[#FFFDF9] flex items-center justify-center font-display-luxury font-bold text-xl">
                 A
               </div>
               <div>
-                <span className="font-display-luxury text-2xl font-bold tracking-[0.2em] text-white block">
+                <span className="font-display-luxury text-2xl font-bold tracking-[0.2em] text-[#34322E] block">
                   {BRAND_INFO.name}
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.3em] text-[#C27D56] font-medium block">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-[#B86F52] font-medium block">
                   {BRAND_INFO.tagline}
                 </span>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-[#A8A297] leading-relaxed font-light">
+            <p className="text-xs sm:text-sm text-[#777168] leading-relaxed font-light">
               Pioneers in high-performance Italian porcelain slabs, architectural ceramic cladding, and rare quarry reproductions. Engineering luxury spaces that endure for generations.
             </p>
+
+            {/* Thin champagne separator */}
+            <div className="w-12 h-[1px] bg-[#C9A875]/50" />
 
             {/* Social Media Links */}
             <div className="flex items-center space-x-3 pt-2">
@@ -155,7 +158,7 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#C27D56] hover:bg-[#C27D56] transition-all"
+                className="w-9 h-9 rounded-sm bg-[#FFFDF9] border border-[#D9CEBC] flex items-center justify-center text-[#777168] hover:text-[#FFFDF9] hover:border-[#B86F52] hover:bg-[#B86F52] transition-all"
               >
                 <InstagramIcon />
               </a>
@@ -164,7 +167,7 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="w-9 h-9 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#C27D56] hover:bg-[#C27D56] transition-all"
+                className="w-9 h-9 rounded-sm bg-[#FFFDF9] border border-[#D9CEBC] flex items-center justify-center text-[#777168] hover:text-[#FFFDF9] hover:border-[#B86F52] hover:bg-[#B86F52] transition-all"
               >
                 <FacebookIcon />
               </a>
@@ -173,7 +176,7 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="w-9 h-9 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#C27D56] hover:bg-[#C27D56] transition-all"
+                className="w-9 h-9 rounded-sm bg-[#FFFDF9] border border-[#D9CEBC] flex items-center justify-center text-[#777168] hover:text-[#FFFDF9] hover:border-[#B86F52] hover:bg-[#B86F52] transition-all"
               >
                 <LinkedinIcon />
               </a>
@@ -182,7 +185,7 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp Concierge"
-                className="w-9 h-9 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#C27D56] hover:bg-[#C27D56] transition-all"
+                className="w-9 h-9 rounded-sm bg-[#FFFDF9] border border-[#D9CEBC] flex items-center justify-center text-[#777168] hover:text-[#FFFDF9] hover:border-[#B86F52] hover:bg-[#B86F52] transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
               </a>
@@ -191,16 +194,16 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
 
           {/* Quick Links */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.25em] text-white font-bold font-display-luxury pb-2 border-b border-white/10">
+            <h4 className="text-xs uppercase tracking-[0.25em] text-[#34322E] font-bold font-display-luxury pb-2 border-b border-[#D9CEBC]">
               Quick Navigation
             </h4>
-            <ul className="space-y-2.5 text-xs text-[#A8A297]">
+            <ul className="space-y-2.5 text-xs text-[#777168]">
               {quickLinks.map((link, idx) => (
                 <li key={idx}>
                   <a
                     href={link.href}
                     onClick={(e) => handleSmoothScroll(e, link.href)}
-                    className="hover:text-white hover:underline underline-offset-4 transition-colors"
+                    className="hover:text-[#B86F52] hover:underline underline-offset-4 transition-colors"
                   >
                     {link.name}
                   </a>
@@ -211,16 +214,16 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
 
           {/* Collections */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.25em] text-white font-bold font-display-luxury pb-2 border-b border-white/10">
+            <h4 className="text-xs uppercase tracking-[0.25em] text-[#34322E] font-bold font-display-luxury pb-2 border-b border-[#D9CEBC]">
               Surface Collections
             </h4>
-            <ul className="space-y-2.5 text-xs text-[#A8A297]">
+            <ul className="space-y-2.5 text-xs text-[#777168]">
               {collectionLinks.map((link, idx) => (
                 <li key={idx}>
                   <a
                     href={link.href}
                     onClick={(e) => handleSmoothScroll(e, link.href)}
-                    className="hover:text-white hover:underline underline-offset-4 transition-colors"
+                    className="hover:text-[#B86F52] hover:underline underline-offset-4 transition-colors"
                   >
                     {link.name}
                   </a>
@@ -231,32 +234,32 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
 
           {/* Showroom & Contact Info */}
           <div className="lg:col-span-3 space-y-4 text-xs">
-            <h4 className="text-xs uppercase tracking-[0.25em] text-white font-bold font-display-luxury pb-2 border-b border-white/10">
-              Showroom & Concierge
+            <h4 className="text-xs uppercase tracking-[0.25em] text-[#34322E] font-bold font-display-luxury pb-2 border-b border-[#D9CEBC]">
+              Showroom &amp; Concierge
             </h4>
             
-            <div className="space-y-3 text-[#A8A297]">
+            <div className="space-y-3 text-[#777168]">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#C27D56] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#B86F52] shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{BRAND_INFO.address}</span>
               </div>
               
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#C27D56] shrink-0" />
-                <a href={`tel:${BRAND_INFO.phone}`} className="hover:text-white transition-colors">
+                <Phone className="w-4 h-4 text-[#B86F52] shrink-0" />
+                <a href={`tel:${BRAND_INFO.phone}`} className="hover:text-[#B86F52] transition-colors">
                   {BRAND_INFO.phone}
                 </a>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#C27D56] shrink-0" />
-                <a href={`mailto:${BRAND_INFO.email}`} className="hover:text-white transition-colors">
+                <Mail className="w-4 h-4 text-[#B86F52] shrink-0" />
+                <a href={`mailto:${BRAND_INFO.email}`} className="hover:text-[#B86F52] transition-colors">
                   {BRAND_INFO.email}
                 </a>
               </div>
 
               <div className="flex items-start gap-2.5 pt-1">
-                <Clock className="w-4 h-4 text-[#C27D56] shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#B86F52] shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{BRAND_INFO.hours}</span>
               </div>
             </div>
@@ -264,7 +267,7 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
             <div className="pt-2">
               <button
                 onClick={onOpenBookingModal}
-                className="w-full py-2.5 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-sm text-[11px] uppercase font-semibold tracking-wider transition-colors"
+                className="w-full py-2.5 bg-[#FFFDF9] hover:bg-[#B86F52] hover:text-[#FFFDF9] text-[#34322E] border border-[#D9CEBC] hover:border-[#B86F52] rounded-sm text-[11px] uppercase font-semibold tracking-wider transition-all"
               >
                 Book VIP Private Tour
               </button>
@@ -274,16 +277,16 @@ export default function Footer({ onOpenQuoteModal, onOpenBookingModal }) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6E717D]">
+        <div className="mt-16 pt-8 border-t border-[#D9CEBC] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#777168]">
           <div>
             © 2026 {BRAND_INFO.fullName}. All Rights Reserved.
           </div>
           <div className="flex items-center space-x-6 text-[11px]">
-            <span className="hover:text-white transition-colors cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-[#B86F52] transition-colors cursor-pointer">Privacy Policy</span>
             <span>•</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Terms of Specification</span>
+            <span className="hover:text-[#B86F52] transition-colors cursor-pointer">Terms of Specification</span>
             <span>•</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Architectural Certifications</span>
+            <span className="hover:text-[#B86F52] transition-colors cursor-pointer">Architectural Certifications</span>
           </div>
         </div>
 

@@ -6,10 +6,10 @@ export default function BrandPartners() {
   const list = [...BRAND_PARTNERS, ...BRAND_PARTNERS];
 
   return (
-    <section className="py-12 bg-[#121316] text-[#D9D0C3] border-b border-[#2A2C33] overflow-hidden">
+    <section className="py-12 bg-[#F8F5EF] text-[#34322E] border-b border-[#EDE5D8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 text-center">
-        <span className="text-[10px] uppercase tracking-[0.3em] text-[#A8A297] font-semibold">
-          Certified Manufacturing Alliances & Global Standards
+        <span className="text-[10px] uppercase tracking-[0.3em] text-[#777168] font-semibold">
+          Certified Manufacturing Alliances &amp; Global Standards
         </span>
       </div>
 
@@ -19,14 +19,14 @@ export default function BrandPartners() {
           {list.map((brand, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-sm hover:border-[#C27D56]/60 transition-colors cursor-default shrink-0 group"
+              className="flex items-center gap-3 px-6 py-3 bg-[#FFFDF9] border border-[#EDE5D8] rounded-sm hover:border-[#B86F52]/50 transition-colors cursor-default shrink-0 group shadow-sm"
             >
-              <div className="w-2 h-2 rounded-full bg-[#C27D56] group-hover:scale-125 transition-transform" />
+              <div className="w-2 h-2 rounded-full bg-[#C9A875] group-hover:scale-125 transition-transform" />
               <div className="flex flex-col text-left">
-                <span className="font-display-luxury text-sm font-bold tracking-widest text-white group-hover:text-[#DFBD69] transition-colors">
+                <span className="font-display-luxury text-sm font-bold tracking-widest text-[#34322E] group-hover:text-[#B86F52] transition-colors">
                   {brand.name}
                 </span>
-                <span className="text-[9px] uppercase font-mono tracking-wider text-gray-400">
+                <span className="text-[9px] uppercase font-mono tracking-wider text-[#777168]">
                   {brand.country} • {brand.style}
                 </span>
               </div>
